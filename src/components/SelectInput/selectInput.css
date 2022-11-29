@@ -1,0 +1,46 @@
+.selectInputContainer{
+    width: 600px;
+    height: 50px;
+    border: 2px solid rgb(70, 119, 232);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 5px;
+}
+.inputContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inputBack{
+    position:absolute;
+    width: 100px;
+    height: 30px;
+    opacity: 0.1;
+}
+.inputDiv{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100px;
+    height: 30px;
+}
+.inputValue{
+    width: fit-content;
+    /* padding: 5px;
+    margin:0 5px */
+}
+.icontContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
+}
+.selectionButton{
+    width: 20px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,13 @@
+.nav_cont{
+    position: sticky;
+    display: flex;
+    height: 50px;
+    width:100vw ;
+    background-color: #28eddd;
+    justify-content: flex-start;
+    align-items: center;
+}
+.nav_head{
+margin-left: 20px;
+text-decoration: none;
+}
