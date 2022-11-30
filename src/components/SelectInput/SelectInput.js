@@ -1,26 +1,57 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react'
 import Options from '../Options/Options'
 import './selectInput.css'
+
+const colorData=[
+    {
+        id:"colorId_1",
+        color:'Red'
+    },
+    {
+        id:"colorId_2",
+        color:'Green'
+    },
+    {
+        id:"colorId_3",
+        color:'Yellow'
+    },
+    {
+        id:"colorId_4",
+        color:'Purple'
+    },
+    {
+        id:"colorId_5",
+        color:'Black'
+    },
+    {
+        id:"colorId_6",
+        color:'Blue'
+    }
+]
+
 
 const SelectInput=()=>{
     const [drawer,setDrawer] = useState(false);
     const [selectedInput,setSelectedInput]=useState([]);
 
     
-    const handleSelect=(id,color)=>{
-        console.log('out');
-        if(selectedInput===[] || selectedInput.includes(!id) ){
-            setSelectedInput((prev)=>[...prev,{id,color}]);
-        }else{
-            console.log('in');
+    const handleSelect=(colorItem,index)=>{
 
-        }
-        }
+        if(colorItem==='remove'){
+            setSelectedInput([]);
+        }else{
+
+            if(!selectedInput[index]){
+                setSelectedInput((prev)=>[...prev,colorItem]);
+            }else  return  
+        }}
+        
     
     const handleDrawer=()=>{
         setDrawer(!drawer)
     }
+
     return(
         <>
         <div className='selectInputContainer'>
@@ -37,13 +68,13 @@ const SelectInput=()=>{
                }
             </div>
                <div className='icontContainer'>
-                <button className='selectionButton'>x</button>
+                <button className='selectionButton' onClick={()=>handleSelect('remove')}>x</button>
                 <button className='selectionButton' onClick={handleDrawer}>Y</button>
             </div>
         </div>
         {
             drawer &&
-        <Options handleSelect={handleSelect} />
+        <Options handleSelect={handleSelect} data={colorData} />
         }
         </>
     )
