@@ -37,15 +37,19 @@ const SelectInput=()=>{
 
     
     const handleSelect=(colorItem,index)=>{
-
         if(colorItem==='remove'){
             setSelectedInput([]);
         }else{
-
-            if(!selectedInput[index]){
+            if(!selectedInput.some(element => element===colorItem)){
                 setSelectedInput((prev)=>[...prev,colorItem]);
             }else  return  
         }}
+
+    const handleRemove=(colorItem)=>{
+        const value=selectedInput.filter((item)=>item!==colorItem)
+        setSelectedInput(value);
+        console.log('handleRemove')
+    }
         
     
     const handleDrawer=()=>{
@@ -61,7 +65,7 @@ const SelectInput=()=>{
             <div className="inputBack" style={{background:colorItem.color}} />
             <div className='inputDiv'>
             <span className="inputValue" style={{color:colorItem.color}}>{colorItem.color}</span>
-            <span>x </span>
+            <span onClick={()=>handleRemove(colorItem,index)}>x </span>
             </div>
                 </div>
                 ))
