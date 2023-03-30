@@ -2,17 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+// import Test from '../src/Pages/Test/Test'
 import reportWebVitals from './reportWebVitals';
 import Check from './Pages/Check/Check';
 import Color from './Pages/Color/Color';
 import SelectInput from './components/SelectInput/SelectInput';
+import Login from './Pages/Login/Login';
 // import Class from './Pages/Class/Class';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <Color /> */}
-    <SelectInput />
+    <Color />
+    {/* <SelectInput /> */}
+    {/* <Login /> */}
+    {/* <Test /> */}
     {/* <App /> */}
     {/* <Check/> */}
     {/* <Class/> */}
